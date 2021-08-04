@@ -16,6 +16,7 @@ gamesRouter.get("/", async (req: Request, res: Response) => {
     }
 });
 
+// Example route: http://localhost:8080/games/610aaf458025d42e7ca9fcd0
 gamesRouter.get("/:id", async (req: Request, res: Response) => {
     try {
         const game = await GamesService.read(req.params.id);
@@ -35,16 +36,18 @@ gamesRouter.post("/", async (req: Request, res: Response) => {
 
         result ? res.status(201) : res.status(500)
     } catch (ex) {
+        res.status(400).send(ex.message);
         console.log(ex.message);
     }
 });
 
 gamesRouter.put("/:id", async (req: Request, res: Response) => {
     try {
-        const updatedGame: Game = req.body;
+        const updatedGame: Game = req.body as Game;
         const result = await GamesService.update(req.params.id, updatedGame);
         result ? res.status(200) : res.status(304);
     } catch (ex) {
+        res.status(400).send(ex.message);
         console.log(ex.message);
     }
 });
@@ -54,6 +57,7 @@ gamesRouter.delete("/:id", async (req: Request, res: Response) => {
         const result = await GamesService.deleteOne(req.params.id);
         result ? res.status(202) : res.status(304);
     } catch (ex) {
+        res.status(400).send(ex.message);
         console.log(ex.message);
     }
 });

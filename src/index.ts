@@ -10,5 +10,6 @@ app.use("/games", gamesRouter); // send all calls to /games to our gamesRouter
 // start the Express server
 app.listen( port, () => {
     console.log( `server started at http://localhost:${ port }` );
+    // initService initiates the connection to our Atlas cluster
     GamesService.initService();
 } );
