@@ -91,8 +91,7 @@ export const update = async (id: string, newGame: Game) => {
     const result = await gamesCollection.updateOne(query, {$set: newGame});
 
 
-    if(result.modifiedCount > 0)
-    {
+    if(result.modifiedCount > 0) {
         console.log(`Updated document ${id} - ${newGame.name}`);
         return true;
     }
@@ -106,8 +105,7 @@ export const deleteOne = async (id: string) => {
     const query = {_id: new mongoDB.ObjectId(id)};
     const result = await gamesCollection.deleteOne(query);
 
-    if(result.deletedCount > 0)
-    {
+    if(result.deletedCount > 0) {
         console.log(`Deleted document ${id}`);
         return true;
     }
