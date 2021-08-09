@@ -1,0 +1,7 @@
+# Ignore artifcations:
+build
+coverage
+dist
+.vscode/
+node_modules/
+.DS_Store
