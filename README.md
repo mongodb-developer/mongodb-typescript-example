@@ -29,7 +29,7 @@ The below diagram shows the overall architecture of the diagram and the followin
 
 The games.router.ts class uses Express's Router functionality. It defines the endpoints available to clients and then makes calls to the games.service.ts class.
 
-### Games Service
+### Games Service
 
 The games.service.ts class implements the Create, Read, Update, Delete (CRUD) operations, handling communicating with the database via the MongoDB npm package. 
 
