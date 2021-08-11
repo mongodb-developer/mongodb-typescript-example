@@ -1,4 +1,4 @@
-import { ObjectId }from "mongodb";
+import { ObjectId } from "mongodb";
 
 interface IGame {
     id?: ObjectId;
@@ -6,7 +6,6 @@ interface IGame {
     price: number;
     category: string;
 }
-
 
 export default class Game implements IGame {
     id?: ObjectId;

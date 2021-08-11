@@ -20,7 +20,7 @@ gamesRouter.get("/", async (req: Request, res: Response) => {
 gamesRouter.get("/:id", async (req: Request, res: Response) => {
     try {
         const game = await GamesService.read(req.params.id);
-        if(game) {
+        if (game) {
             res.status(200).send(game);
         }
     } catch (ex) {
@@ -34,7 +34,7 @@ gamesRouter.post("/", async (req: Request, res: Response) => {
 
         const result = await GamesService.create(newGame);
 
-        result ? res.status(201) : res.status(500)
+        result ? res.status(201) : res.status(500);
     } catch (ex) {
         res.status(400).send(ex.message);
         console.log(ex.message);
@@ -61,4 +61,3 @@ gamesRouter.delete("/:id", async (req: Request, res: Response) => {
         console.log(ex.message);
     }
 });
-

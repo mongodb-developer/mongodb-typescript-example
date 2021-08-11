@@ -1,18 +1,21 @@
 ![MongoDB and Typescript logo banner](./images/banner.png)
 
 ## Introduction
-Welcome to this MongoDB and Typescript sample project. 
+
+Welcome to this MongoDB and Typescript sample project.
 The aim of this project is to give you a working example of how you can use the power of MongoDB Atlas with Typescript and Express to create modern web applications.
 
 ## Running the project
+
 In order to run this project:
 
 1. Create a .env file in the root of the project with the same properties as env.example
 2. Update the values with your connection string, database name and collection name
-    * **Note** - you will need an existing collection so make sure to create one, even if it is empty, before continuing
+    - **Note** - you will need an existing collection so make sure to create one, even if it is empty, before continuing
 3. run `npm run start`
 
 ## Branches
+
 This app has two branches `main` and `finish`.
 
 `main` contains the boilerplate code to get you started, following the instructions in the companion blog post (TBA).
@@ -31,7 +34,7 @@ The games.router.ts class uses Express's Router functionality. It defines the en
 
 ### Games Service
 
-The games.service.ts class implements the Create, Read, Update, Delete (CRUD) operations, handling communicating with the database via the MongoDB npm package. 
+The games.service.ts class implements the Create, Read, Update, Delete (CRUD) operations, handling communicating with the database via the MongoDB npm package.
 
 This is also where schema validation is applied to the collection at database level.
 
@@ -43,7 +46,6 @@ TypeScript is an optionally statically typed language that allows for taking adv
 
 If you want more information about MongoDB and Atlas, the powerful cloud-based database solution, you can view [the documentation](https://docs.atlas.mongodb.com/).
 
-## Disclaimer 
+## Disclaimer
 
 Use at your own risk; not a supported MongoDB product.
-
