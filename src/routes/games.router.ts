@@ -1,5 +1,5 @@
-import * as GamesService from "../services/games.service";
 import express, { Request, Response } from "express";
+import * as GamesService from "../services/games.service";
 import Game from "../models/game";
 
 export const gamesRouter = express.Router();
