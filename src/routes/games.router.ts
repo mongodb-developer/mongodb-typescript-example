@@ -1,6 +1,6 @@
 import * as GamesService from "../services/games.service";
 import express, { Request, Response } from "express";
-import Game from "../models/game.interface";
+import Game from "../models/game";
 
 export const gamesRouter = express.Router();
 
@@ -18,13 +18,18 @@ gamesRouter.get("/", async (req: Request, res: Response) => {
 
 // Example route: http://localhost:8080/games/610aaf458025d42e7ca9fcd0
 gamesRouter.get("/:id", async (req: Request, res: Response) => {
+    const id = req?.params?.id;
+    if (!id) {
+        return res.status(400).send('ID is required');
+    }
+
     try {
-        const game = await GamesService.read(req.params.id);
+        const game = await GamesService.read(id);
         if (game) {
             res.status(200).send(game);
         }
     } catch (ex) {
-        res.status(404).send("Unable to find matching document with id:" + req.params.id);
+        res.status(404).send(`Unable to find matching document with id: ${req.params.id}`);
     }
 });
 

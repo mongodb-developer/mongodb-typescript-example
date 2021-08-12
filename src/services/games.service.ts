@@ -1,4 +1,4 @@
-import Game from "../models/game.interface";
+import Game from "../models/game";
 import * as mongoDB from "mongodb";
 import * as dotenv from "dotenv";
 
