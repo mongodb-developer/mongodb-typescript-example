@@ -52,6 +52,6 @@ export async function connectToDatabase(app: ExpressApp) {
     collections.games = gamesCollection;
 
     console.log(
-        `Successfully connected to database: ${db.databaseName} and collection: ${gamesCollection.collectionName}`
+        `Successfully connected to database: ${db.databaseName} and collection: ${gamesCollection.collectionName}`,
     );
 }
