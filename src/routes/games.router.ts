@@ -40,9 +40,9 @@ gamesRouter.post("/", async (req: Request, res: Response) => {
         const newGame = req.body as Game;
         const result = await collections.games.insertOne(newGame);
 
-        result ?
-            res.status(201).send(`Successfully created a new game with id ${result.insertedId}`) :
-            res.status(500).send('Failed to create a new game.');
+        result
+            ? res.status(201).send(`Successfully created a new game with id ${result.insertedId}`)
+            : res.status(500).send("Failed to create a new game.");
     } catch (error) {
         console.error(error);
         res.status(400).send(error.message);
@@ -57,10 +57,10 @@ gamesRouter.put("/:id", async (req: Request, res: Response) => {
         const query = { _id: new ObjectId(id) };
         // $set adds or updates all fields
         const result = await collections.games.updateOne(query, { $set: updatedGame });
-    
-        result ?
-            res.status(200).send(`Successfully updated game with id ${id}`) :
-            res.status(304).send(`Failed to update game with id ${id}`);
+
+        result
+            ? res.status(200).send(`Successfully updated game with id ${id}`)
+            : res.status(304).send(`Failed to update game with id ${id}`);
     } catch (error) {
         console.error(error.message);
         res.status(400).send(error.message);

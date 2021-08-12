@@ -16,6 +16,6 @@ connectToDatabase(app)
         });
     })
     .catch((error: Error) => {
-        console.error('Database connection failed', error);
+        console.error("Database connection failed", error);
         process.exit();
     });
