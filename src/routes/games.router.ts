@@ -60,7 +60,7 @@ gamesRouter.put("/:id", async (req: Request, res: Response) => {
 
         result
             ? res.status(200).send(`Successfully updated game with id ${id}`)
-            : res.status(304).send(`Failed to update game with id ${id}`);
+            : res.status(304).send(`Game with id: ${id} not updated`);
     } catch (error) {
         console.error(error.message);
         res.status(400).send(error.message);
@@ -77,9 +77,9 @@ gamesRouter.delete("/:id", async (req: Request, res: Response) => {
         if (result && result.deletedCount) {
             res.status(202).send(`Successfully removed game with id ${id}`);
         } else if (!result) {
-            res.status(304).send(`Failed to remove game with id ${id}`);
+            res.status(400).send(`Failed to remove game with id ${id}`);
         } else if (!result.deletedCount) {
-            res.status(400).send(`Game with id ${id} does not exist`);
+            res.status(404).send(`Game with id ${id} does not exist`);
         }
     } catch (error) {
         console.error(error.message);
