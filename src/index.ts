@@ -5,7 +5,7 @@ import { gamesRouter } from "./routes/games.router";
 const app = express();
 const port = 8080; // default port to listen
 
-connectToDatabase(app)
+connectToDatabase()
     .then(() => {
         // send all calls to /games to our gamesRouter
         app.use("/games", gamesRouter);

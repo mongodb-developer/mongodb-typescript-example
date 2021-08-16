@@ -4,7 +4,7 @@ import * as dotenv from "dotenv";
 
 export const collections: { games?: mongoDB.Collection } = {};
 
-export async function connectToDatabase(app: ExpressApp) {
+export async function connectToDatabase() {
     // Pulls in the .env file so it can be accessed from process.env. No path as .env is in root, the default location
     dotenv.config();
 
