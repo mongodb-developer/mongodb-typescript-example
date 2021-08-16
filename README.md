@@ -10,8 +10,7 @@ The aim of this project is to give you a working example of how you can use the 
 In order to run this project:
 
 1. Create a .env file in the root of the project with the same properties as env.example
-2. Update the values with your connection string, database name and collection name
-    - **Note** - you will need an existing collection so make sure to create one, even if it is empty, before continuing
+2. Update the values with your connection string, database name and collection name   
 3. Run `npm i` to install all dependencies listed in package.json
 3. Run `npm run start`
 
