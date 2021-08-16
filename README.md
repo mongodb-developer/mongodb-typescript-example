@@ -30,17 +30,15 @@ The below diagram shows the overall architecture of the diagram and the followin
 
 ### Games Router
 
-The games.router.ts class uses Express's Router functionality. It defines the endpoints available to clients and then makes calls to the games.service.ts class.
+The games.router.ts class uses Express's Router functionality. It defines the endpoints available to clients for the Create, Read, Update and Delete (CRUD) operations and then communicates with the database via the MongoDB NodeJS Driver.
 
-### Games Service
+### Database Service
 
-The games.service.ts class implements the Create, Read, Update, Delete (CRUD) operations, handling communicating with the database via the MongoDB npm package.
-
-This is also where schema validation is applied to the collection at database level.
+The database.service.ts class implements the connection the database. This is also where schema validation is applied to the collection at database level.
 
 ### Models
 
-TypeScript is an optionally statically typed language that allows for taking advantage of object-orientated programming. The games.interface.ts class creates an interface and class implementation that define the properties and data types expected in our document. We use this model throughout the code to enjoy the benefits of typed objects.
+TypeScript is an optionally statically typed language that allows for taking advantage of object-orientated programming. The games.ts class creates a class that defines the properties and data types expected in our document. We use this model throughout the code to enjoy the benefits of typed objects.
 
 ## More information
 
