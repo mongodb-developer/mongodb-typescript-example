@@ -8,6 +8,7 @@
         "sourceMap": true,
         "outDir": "dist",
         "baseUrl": ".",
+        "allowJs": true,
         "paths": {
             "*": ["node_modules/*"]
         }
