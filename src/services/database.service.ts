@@ -1,7 +1,8 @@
 import * as mongoDB from "mongodb";
 import * as dotenv from "dotenv";
+import Game from "../models/game";
 
-export const collections: { games?: mongoDB.Collection } = {};
+export const collections: { games?: mongoDB.Collection<Game> } = {};
 
 export async function connectToDatabase() {
     // Pulls in the .env file so it can be accessed from process.env. No path as .env is in root, the default location
@@ -20,7 +21,7 @@ export async function connectToDatabase() {
     await applySchemaValidation(db);
 
     // Connect to the collection with the specific name from .env, found in the database previously specified
-    const gamesCollection = db.collection(process.env.GAMES_COLLECTION_NAME);
+    const gamesCollection = db.collection<Game>(process.env.GAMES_COLLECTION_NAME);
 
     // Persist the connection to the Games collection
     collections.games = gamesCollection;
@@ -29,6 +30,7 @@ export async function connectToDatabase() {
         `Successfully connected to database: ${db.databaseName} and collection: ${gamesCollection.collectionName}`,
     );
 }
+
 // Update our existing collection with JSON schema validation so we know our documents will always match the shape of our Game model, even if added elsewhere.
 // For more information about schema validation, see this blog series: https://www.mongodb.com/blog/post/json-schema-validation--locking-down-your-model-the-smart-way
 async function applySchemaValidation(db: mongoDB.Db) {
@@ -60,7 +62,7 @@ async function applySchemaValidation(db: mongoDB.Db) {
         collMod: process.env.GAMES_COLLECTION_NAME,
         validator: jsonSchema
     }).catch(async (error: mongoDB.MongoServerError) => {
-        if(error.codeName === 'NamespaceNotFound') {
+        if (error.codeName === 'NamespaceNotFound') {
             await db.createCollection(process.env.GAMES_COLLECTION_NAME, {validator: jsonSchema});
         }
     });
