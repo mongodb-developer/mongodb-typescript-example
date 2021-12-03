@@ -1,7 +1,5 @@
-import { Express as ExpressApp } from "express";
 import * as mongoDB from "mongodb";
 import * as dotenv from "dotenv";
-import { env } from "process";
 
 export const collections: { games?: mongoDB.Collection } = {};
 
