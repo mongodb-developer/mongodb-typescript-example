@@ -1,7 +1,6 @@
 import express, { Request, Response } from "express";
 import { ObjectId } from "mongodb";
 import { collections } from "../services/database.service";
-import Game from "../models/game";
 
 export const gamesRouter = express.Router();
 
@@ -10,7 +9,7 @@ gamesRouter.use(express.json());
 gamesRouter.get("/", async (_req: Request, res: Response) => {
     try {
         // Call find with an empty filter object, meaning it returns all documents in the collection. Saves as Game array to take advantage of types
-        const games = (await collections.games.find({}).toArray()) as Game[];
+        const games = await collections.games.find({}).toArray();
 
         res.status(200).send(games);
     } catch (error) {
@@ -25,7 +24,7 @@ gamesRouter.get("/:id", async (req: Request, res: Response) => {
     try {
         // _id in MongoDB is an objectID type so we need to find our specific document by querying
         const query = { _id: new ObjectId(id) };
-        const game = (await collections.games.findOne(query)) as Game;
+        const game = await collections.games.findOne(query);
 
         if (game) {
             res.status(200).send(game);
@@ -37,7 +36,7 @@ gamesRouter.get("/:id", async (req: Request, res: Response) => {
 
 gamesRouter.post("/", async (req: Request, res: Response) => {
     try {
-        const newGame = req.body as Game;
+        const newGame = req.body;
         const result = await collections.games.insertOne(newGame);
 
         result
@@ -53,7 +52,7 @@ gamesRouter.put("/:id", async (req: Request, res: Response) => {
     const id = req?.params?.id;
 
     try {
-        const updatedGame: Game = req.body as Game;
+        const updatedGame = req.body;
         const query = { _id: new ObjectId(id) };
         // $set adds or updates all fields
         const result = await collections.games.updateOne(query, { $set: updatedGame });
