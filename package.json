@@ -1,7 +1,7 @@
 {
-    "name": "mongodb-typescript-example",
+    "name": "tigris-mongodb-typescript-example",
     "version": "1.0.0",
-    "description": "Welcome to this MongoDB and TypeScript sample project.  The aim of this project is to give you a working example of how you can use the power of MongoDB Atlas with TypeScript and Express to create modern web applications.",
+    "description": "Welcome to this Tigris MongoDB Compatibility with TypeScript sample project. The aim of this project is to give you a working example of how you can use the power of Tigris MongoDB Compatibility with TypeScript and Express to create modern web applications.",
     "main": "dist/index.js",
     "scripts": {
         "build": "tsc",
@@ -12,20 +12,21 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/mongodb-developer/mongodb-typescript-example.git"
+        "url": "git+https://github.com/tigrisdata-community/tigris-mongodb-typescript-example.git"
     },
     "keywords": [
         "mongodb",
         "typescript",
         "express",
-        "atlas"
+        "atlas",
+        "tigris",
+        "developer-data-platform"
     ],
-    "author": "Luce Carter",
     "license": "Apache 2.0",
     "bugs": {
-        "url": "https://github.com/mongodb-developer/mongodb-typescript-example/issues"
+        "url": "https://github.com/tigrisdata-community/tigris-mongodb-typescript-example/issues"
     },
-    "homepage": "https://github.com/mongodb-developer/mongodb-typescript-example#readme",
+    "homepage": "https://github.com/tigrisdata-community/tigris-mongodb-typescript-example#readme",
     "dependencies": {
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
