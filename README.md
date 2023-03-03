@@ -4,19 +4,34 @@
 
 ## Introduction
 
-Welcome to this Tigris MongoDB compatibility and TypeScript sample project.
-The aim of this project is to give you a working example of how you can use the power of Tigris MongoDB compatibility with TypeScript and Express to create modern web applications.
+Welcome to this Tigris MongoDB compatibility and TypeScript example app.
+This repo aims to give you a working example of how you can use the power of Tigris MongoDB compatibility with TypeScript and Express to create modern web applications.
 
 This repository is a fork of the [MongoDB TypesScript example repo](https://github.com/mongodb-developer/mongodb-typescript-example) with some README updates and a minor configuration change required to use the sample with Tigris.
 
-## Running the project
+## Prerequisites
 
-In order to run this project:
+-   [Node.js](https://nodejs.org/en/download/) LTS or higher
+-   A [Tigris Cloud account](https://console.preview.tigrisdata.cloud/signup?utm_source=github&utm_medium=github&utm_campaign=tigris-mongodb-typescript-example) or you can [self-host Tigris](https://www.tigrisdata.com/docs/concepts/platform/self-host/?utm_source=github&utm_medium=github&utm_campaign=tigris-mongodb-typescript-example)
 
-1. Create a `.env` file in the root of the project with the same properties as `env.example`
-2. Update the values with your connection string, database name and collection name
-3. Run `npm i` to install all dependencies listed in `package.json`
-4. Run `npm start`
+## Running the example app
+
+Create a project in Tigris, create an application key, and copy the Client ID and Client Secret values for use in a `.env` file. Then:
+
+1. Create a `.env` file in the root of the app with the same properties as `env.example`
+2. Update the values with your connection string, database name, and collection name
+
+Install the app dependencies:
+
+```shell
+npm i
+```
+
+Run the app:
+
+```shell
+npm start
+```
 
 ### Try out the app
 
@@ -70,8 +85,6 @@ TypeScript is an optionally statically typed language that allows for taking adv
 
 ## More information
 
-If you want more information about [Tigris, the open source alternative to MongoDB Atlas](https://www.tigrisdata.com), you can view [the Tigris documentation](https://www.tigris.com/docs/).
+If you want more information about [Tigris, the open source alternative to MongoDB Atlas](https://www.tigrisdata.com?utm_source=github&utm_medium=github&utm_campaign=tigris-mongodb-typescript-example), you can view [the Tigris documentation](https://www.tigris.com/docs/?utm_source=github&utm_medium=github&utm_campaign=tigris-mongodb-typescript-example).
 
-## Disclaimer
-
-Use at your own risk; not a supported MongoDB product.
+Get involved with Tigris by [joining the Tigris Discord](https://www.tigrisdata.com/discord/?utm_source=github&utm_medium=github&utm_campaign=tigris-mongodb-typescript-example)
