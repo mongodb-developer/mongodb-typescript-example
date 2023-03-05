@@ -1,4 +1,4 @@
-<!-- Modifications copyright (C) 2023 Tigris Data Inc. -->
+<!-- Modifications Copyright 2023 Tigris Data Inc. -->
 
 # Tigris MongoDB compatibility and TypeScript example
 
